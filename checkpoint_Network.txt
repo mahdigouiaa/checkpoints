@@ -1,0 +1,21 @@
+Objective
+Osi refers to Open Systems Interconnection whereas TCP/IP refers to Transmission Control Protocolo
+Instructions 
+Explain the main difference between OSI model and TCP/IP model.
+OSI model have 7 layers
+
+Explain the application service layers and what happen when you write your url and click enter.
+the application service layers is responsible for the transfer of the human interaction to the interface user so
+
+
+Explain what is a domain name and the relation between the DNS and the @IP address.
+Domain name is a simple table that relate each IP to specific name 
+
+Explain the TCP interconnection between your local host and the server.
+A client application can open a TCP/IP connection to a server application, running just about any-where in the world, in other hand when you are working on your local host
+you connection is limited to your own laptop
+
+How data transfer over internet (TCP Packet)
+The user's command or message passes through the TCP/IP protocol stack on the local machine. Then the command or message passes across the network media to the protocols on the recipient. The protocols at each layer on the sending host add information to the original data.
+
+
