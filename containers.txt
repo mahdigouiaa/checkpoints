@@ -1,0 +1,12 @@
+https://hub.docker.com/r/akainer/html-server-image
+
+dockerfile: 
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+
+les commandes:
+docker build -t html-server-image:v1 . 
+docker run -d -p 80:80 html-server-image:v1
+Docker login –username akainer
+Docker tag html-server-image:v1 akainer/html-server-image
+Docker push akainer/html-server-image
