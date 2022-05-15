@@ -1,0 +1,4 @@
+aws glue create-database \
+    --database-input "{\"Name\":\"tempdb\"}" \
+    --profile my_profile \
+    --endpoint https://glue.us-east-1.amazonaws.com
