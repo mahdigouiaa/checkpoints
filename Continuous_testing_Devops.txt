@@ -1,0 +1,54 @@
+# bnk
+import unittest
+import HtmlTestRunner
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+class ViewProductDetails(unittest.TestCase):
+    # declare variable to store the URL to be visited
+    base_url="http://localhost/index.html"
+
+
+
+    # --- Pre - Condition ---
+    def setUp(self):
+        # declare and initialize driver variable
+        self.driver=webdriver.Chrome(executable_path="D:/Download/chromedriver_win32/chromedriver.exe")        
+        # browser should be loaded in maximized window
+        self.driver.maximize_window()
+        # driver should wait implicitly for a given duration, for the element under consideration to load.
+        # to enforce this setting we will use builtin implicitly_wait() function of our 'driver' object.
+        self.driver.implicitly_wait(10)  #10 is in seconds
+
+    # --- Steps for AMZN_Search_TC_001 ---
+    def test_load_home_page(self):        
+        # to initialize a variable to hold reference of webdriver instance being passed to the function as a reference.
+        driver=self.driver
+        # to load a given URL in browser window
+        driver.get(self.base_url)        
+        # test whether correct URL/ Web Site has been loaded or not
+        self.assertIn("Space Science Website Template",driver.title)
+
+    # --- Steps for AMZN_Search_TC_002 ---
+    def test_signup(self):        
+        # to load a given URL in browser window
+        driver=self.driver
+        driver.get('http://localhost/contact.html')        
+        searchTextBox=self.driver.find_element_by_xpath('//*[@id="body"]/div/div/form/input[1]')
+        searchTextBox.clear
+        searchTextBox.send_keys("mahdi")
+        searchTextBox=self.driver.find_element_by_xpath('//*[@id="body"]/div/div/form/input[2]')
+        searchTextBox.clear
+        searchTextBox.send_keys("sasasasasas")
+   
+        
+   
+    # --- post - condition ---
+    def tearDown(self):
+        # to close the browser
+        self.driver.quit()
+        
+if __name__ == '__main__':
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:/D/PyWorkspace/amazon/Reports'))
